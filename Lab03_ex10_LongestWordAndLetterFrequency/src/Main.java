@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        File textFile = new File("Lab03_ex10.txt");
         //Create the text file
+        File textFile = new File("Lab03_ex10.txt");
         try {
             if (textFile.createNewFile()) {
                 System.out.print("The file " + textFile.getName() + " was created successfully.\n");
@@ -49,7 +49,7 @@ public class Main {
         int[] letterFrequency = new int[26];
 
         try {
-            //
+            //Find the longest word and the frequency of the characters
             File textFile2 = new File("Lab03_ex10.txt");
             Scanner sc = new Scanner(textFile2);
             while (sc.hasNext()) {
@@ -71,7 +71,7 @@ public class Main {
             }
             //Close the scanner
             sc.close();
-            //Method for displaying the results (longest word, character frequency)
+            //Method for displaying the results (longest word, letter frequency)
             displayResults(longestWord, letterFrequency);
         }
         catch (FileNotFoundException e) {
@@ -79,7 +79,7 @@ public class Main {
         }
     }
 
-    //Define method for displaying the results (longest word, character frequency)
+    //Define method for displaying the results (longest word, letter frequency)
     static void displayResults(String word, int[] frequency) {
         //Declare variable of type char to hold the "winning" letter and initialize it as an empty space
         char maxLetter = ' ';
@@ -98,6 +98,6 @@ public class Main {
         //Display the results
         System.out.println("\n-----RESULTS-----");
         System.out.println("The longest word is: " + word);
-        System.out.println("The most used letter is: " + maxLetter + "(" + maxFrequency + " times)");
+        System.out.println("The most used letter is: " + maxLetter + " (" + maxFrequency + " times)");
     }
 }
